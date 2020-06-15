@@ -37,9 +37,9 @@ Follow these steps to set up and work on your project:
 - [x] Clone your OWN version of the repository (Not Lambda's by mistake!).
 - [x] CD into the project base directory.
 - [x] Download project dependencies by running `npm install`
-- [ ] Start up the app using `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`. Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Start up the app using `npm start`
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`. Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 ### Task 2: Minimum Viable Product
 
