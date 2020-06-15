@@ -138,13 +138,14 @@ const PizzaForm = () => {
                     </div>
                     <FormGroup>
                         <Label for='size' />
-                        <Input type='select' id='size' name='size' value={formState.size} onChange={handleChanges}>
+                        <Input type='select' data-cy='size' id='size' name='size' value={formState.size} onChange={handleChanges}>
                             <option value=''>Select</option>
                             <option value='small'>Small</option>
                             <option value='medium'>Medium</option>
                             <option value='large'>Large</option>
                             <option value='extralarge'>Extra Large</option>
                         </Input>
+                        {errors.size.length > 0 ? <p className='error'>{errors.size}</p> : null}
                     </FormGroup>
                     <div className='topping-section'>
                         <h2>Choice of Sauce</h2>
@@ -152,25 +153,25 @@ const PizzaForm = () => {
                     </div>
                     <FormGroup check>
                         <Label check>
-                            <Input type='radio' name='sauce'  value={formState.size} onChange={handleChanges} />{' '}
+                            <Input type='radio' data-cy='sauce1' name='sauce'  value={formState.size} onChange={handleChanges} />{' '}
                             Original Red
                         </Label>
                     </FormGroup>
                     <FormGroup check>
                         <Label check>
-                            <Input type='radio' name='sauce'  value={formState.size} onChange={handleChanges} />{' '}
+                            <Input type='radio' data-cy='sauce2' name='sauce'  value={formState.size} onChange={handleChanges} />{' '}
                             Garlic Ranch
                         </Label>
                     </FormGroup>
                     <FormGroup check>
                         <Label check>
-                            <Input type='radio' name='sauce'  value={formState.size} onChange={handleChanges} />{' '}
+                            <Input type='radio' data-cy='sauce3' name='sauce'  value={formState.size} onChange={handleChanges} />{' '}
                             BBQ Sauce
                         </Label>
                     </FormGroup>
                     <FormGroup check>
                         <Label check>
-                            <Input type='radio' name='sauce'  value={formState.size} onChange={handleChanges} />{' '}
+                            <Input type='radio' data-cy='sauce4' name='sauce'  value={formState.size} onChange={handleChanges} />{' '}
                             Spinach Alfredo
                         </Label>
                     </FormGroup>
