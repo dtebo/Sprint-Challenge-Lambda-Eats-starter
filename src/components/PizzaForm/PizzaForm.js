@@ -27,7 +27,22 @@ const PizzaForm = () => {
         name: "",
         size: "",
         sauce: "",
-        toppings: [],
+        toppings: {
+            "pepperoni": false,
+            "sausage": false,
+            "canadianbacon": false,
+            "spicyitaliansausage": false,
+            "grilledchicken": false,
+            "onions": false,
+            "greenpepper": false,
+            "dicedtomatos": false,
+            "blackolives": false,
+            "roastedgarlic": false,
+            "artichokehearts": false,
+            "threecheese": false,
+            "pineapple": false,
+            "extracheese": false,
+        },
         substitute: false,
         qty: 0
     });
@@ -38,15 +53,45 @@ const PizzaForm = () => {
         name: "",
         size: "",
         sauce: "",
-        toppings: "",
+        toppings: {
+            "pepperoni": "",
+            "sausage": "",
+            "canadianbacon": "",
+            "spicyitaliansausage": "",
+            "grilledchicken": "",
+            "onions": "",
+            "greenpepper": "",
+            "dicedtomatos": "",
+            "blackolives": "",
+            "roastedgarlic": "",
+            "artichokehearts": "",
+            "threecheese": "",
+            "pineapple": "",
+            "extracheese": "",
+        },
         qty: ""
     });
 
     const formSchema = yup.object().shape({
-        name: yup.string().required("Name is a required field"),
+        name: yup.string().min(2, "Must be at least 2 characters").required("Name is a required field"),
         size: yup.string().required("A size choice is required"),
         sauce: yup.string().required("A sauce selection is required"),
-        toppings: yup.array(),
+        toppings: yup.object().shape({
+            pepperoni: yup.boolean(),
+            sausage: yup.boolean(),
+            canadianbacon: yup.boolean(),
+            spicyitaliansausage: yup.boolean(),
+            grilledchicken: yup.boolean(),
+            onions: yup.boolean(),
+            greenpepper: yup.boolean(),
+            dicedtomatos: yup.boolean(),
+            blackolives: yup.boolean(),
+            roastedgarlic: yup.boolean(),
+            artichokehearts: yup.boolean(),
+            threecheese: yup.boolean(),
+            pineapple: yup.boolean(),
+            extracheese: yup.boolean(),
+        }).required("At least one topping should be selected"),
         substitute: yup.boolean(),
         qty: yup.number().moreThan(0, "You must add at least one pizza")
     });
@@ -84,7 +129,22 @@ const PizzaForm = () => {
                     name: "",
                     size: "",
                     sauce: "",
-                    toppings: [],
+                    toppings: {
+                        "pepperoni": false,
+                        "sausage": false,
+                        "canadianbacon": false,
+                        "spicyitaliansausage": false,
+                        "grilledchicken": false,
+                        "onions": false,
+                        "greenpepper": false,
+                        "dicedtomatos": false,
+                        "blackolives": false,
+                        "roastedgarlic": false,
+                        "artichokehearts": false,
+                        "threecheese": false,
+                        "pineapple": false,
+                        "extracheese": false,
+                    },
                     substitute: false,
                     qty: 0
                 });
@@ -184,43 +244,43 @@ const PizzaForm = () => {
                             <Col md={6}>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='pepperoni' id='pepperoni' name='pepperoni'  />{' '}
+                                        <Input type='checkbox' data-cy='pepperoni' id='pepperoni' name='toppings.pepperoni' value={formState.toppings.pepperoni} onChange={handleChanges}  />{' '}
                                         Pepperoni
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='sausage' id='sausage' name='sausage' />{' '}
+                                        <Input type='checkbox' data-cy='sausage' id='sausage' name='toppings.sausage' value={formState.toppings.sausage} onChange={handleChanges} />{' '}
                                         Sausage
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='canadianbacon' id='canadianbacon' name='canadianbacon' />{' '}
+                                        <Input type='checkbox' data-cy='canadianbacon' id='canadianbacon' name='toppings.canadianbacon' value={formState.toppings['canadianbacon']} onChange={handleChanges} />{' '}
                                         Canadian Bacon
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='spicyitaliansausage' id='spicyitaliansausage' name='spicyitaliansausage' />{' '}
+                                        <Input type='checkbox' data-cy='spicyitaliansausage' id='spicyitaliansausage' name='toppings.spicyitaliansausage' value={formState.toppings['spicyitaliansausage']} onChange={handleChanges} />{' '}
                                         Spicy Italian Sausage
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='grilledchicken' id='grilledchicken' name='grilledchicken' />{' '}
+                                        <Input type='checkbox' data-cy='grilledchicken' id='grilledchicken' name='toppings.grilledchicken' value={formState.toppings['grilledchicken']} onChange={handleChanges} />{' '}
                                         Grilled Chicken
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='onion' id='onion' name='onion' />{' '}
+                                        <Input type='checkbox' data-cy='onion' id='onion' name='toppings.onion' value={formState.toppings['onion']} onChange={handleChanges} />{' '}
                                         Onion
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='greenpepper' id='greenpepper' name='greenpepper' />{' '}
+                                        <Input type='checkbox' data-cy='greenpepper' id='greenpepper' name='toppings.greenpepper' value={formState.toppings['greenpepper']} onChange={handleChanges} />{' '}
                                         Green Pepper
                                     </Label>
                                 </FormGroup>
@@ -228,43 +288,43 @@ const PizzaForm = () => {
                             <Col md={6}>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='dicedtomatos' id='dicedtomatos' name='dicedtomatos' />{' '}
+                                        <Input type='checkbox' data-cy='dicedtomatos' id='dicedtomatos' name='toppings.dicedtomatos' value={formState.toppings['dicedtomatos']} onChange={handleChanges} />{' '}
                                         Diced Tomatos
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='blackolives' id='blackolives' name='blackolives' />{' '}
+                                        <Input type='checkbox' data-cy='blackolives' id='blackolives' name='toppings.blackolives' value={formState.toppings['blackolives']} onChange={handleChanges} />{' '}
                                         Black Olives
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='roastedgarlic' id='roastedgarlic' name='roastedgarlic' />{' '}
+                                        <Input type='checkbox' data-cy='roastedgarlic' id='roastedgarlic' name='toppings.roastedgarlic' value={formState.toppings['roastedgarlic']} onChange={handleChanges} />{' '}
                                         Roasted Garlic
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='artichokehearts' id='artichokehearts' name='artichokehearts' />{' '}
+                                        <Input type='checkbox' data-cy='artichokehearts' id='artichokehearts' name='toppings.artichokehearts' value={formState.toppings['artichokehearts']} onChange={handleChanges} />{' '}
                                         Artichoke Hearts
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='threecheese' id='threecheese' name='threecheese' />{' '}
+                                        <Input type='checkbox' data-cy='threecheese' id='threecheese' name='toppings.threecheese' value={formState.toppings['threecheese']} onChange={handleChanges} />{' '}
                                         Three Cheese
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='pineapple' id='pineapple' name='pineapple' />{' '}
+                                        <Input type='checkbox' data-cy='pineapple' id='pineapple' name='toppings.pineapple' value={formState.toppings['pineapple']} onChange={handleChanges} />{' '}
                                         Pineapple
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' data-cy='extracheese' id='extracheese' name='extracheese' />{' '}
+                                        <Input type='checkbox' data-cy='extracheese' id='extracheese' name='toppings.extracheese' value={formState.toppings['extracheese']} onChange={handleChanges} />{' '}
                                         Extra Cheese
                                     </Label>
                                 </FormGroup>
