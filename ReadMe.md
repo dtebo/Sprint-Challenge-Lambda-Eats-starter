@@ -47,12 +47,12 @@ Your MVP should include, at a minimum, the following components.
 
 - [x] A homepage that has a "/" route and links to your form (button, nav bar, or any other type of link is acceptable)
 - [x] A form with a "/pizza" route
-- [ ] A name text input field
-- [ ] Validation for name - name must be at least 2 characters
-- [ ] Dropdown form component for pizza size
-- [ ] Checklist form component for toppings - at least 4 (hint: name each separately!)
-- [ ] Text input form component for special instructions
-- [ ] An Add to Order button that submits form and returns a database record of name, pizza size, sauce, and special instructions
+- [x] A name text input field
+- [x] Validation for name - name must be at least 2 characters
+- [x] Dropdown form component for pizza size
+- [x] Checklist form component for toppings - at least 4 (hint: name each separately!)
+- [x] Text input form component for special instructions
+- [x] An Add to Order button that submits form and returns a database record of name, pizza size, sauce, and special instructions
 
 #### Testing MVP
 
@@ -71,7 +71,7 @@ You may use the following wireframe (also in a folder above) as guidance as you 
 
 If you complete the MVP, move on to the following stretch goals. As usual, these goals represent a mix of additional at-level work in addition to work that is beyond the scope of what you've learned, but attainable with your current knowledge (and google).
 
-- [ ] Toggle form component for gluten free crust
+- [x] Toggle form component for gluten free crust
 - [ ] Turn your form into a modal that pops up on the home page
 - [ ] Turn form element sections into nested routes
 - [ ] Create a `cart` page with additional form options like: delivery or pickup, the option to add utensils and straws, add a tip, etc.

@@ -4,6 +4,7 @@
     flex-direction: column;
     margin: 20px auto 0 auto;
     width: 700px;
+    font-size: 1.3rem;
 }
 
 .pizza-form-container h1{
@@ -20,8 +21,38 @@
     padding: 30px;
 }
 
+.pizza-form-container input{
+    height: 30px !important;
+}
+
 .pizza-form-container .topping-section{
     background-color: #adadad;
     padding: 8px;
     color: #ffffff;
+}
+
+.total-section button, .total-section input[type='number']{
+    margin-top: 10px;
+}
+
+.total-section .row{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.form-check{
+    margin-left: 20px;
+}
+
+.form-check-input{
+    margin-left: -1.8rem;
+}
+
+.col, .form-group{
+    margin-bottom: 2rem;
+    padding: 10px 20px 10px 5px;
+}
+
+.total-section button, .total-section input[type='number']{
+    margin-top: 10px;
 }
