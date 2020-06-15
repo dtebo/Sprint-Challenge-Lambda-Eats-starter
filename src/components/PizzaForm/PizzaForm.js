@@ -28,7 +28,8 @@ const PizzaForm = () => {
         size: "",
         sauce: "",
         toppings: [],
-        substitute: false
+        substitute: false,
+        qty: 0
     });
 
     const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -38,15 +39,16 @@ const PizzaForm = () => {
         size: "",
         sauce: "",
         toppings: "",
-        substitute: ""
+        qty: ""
     });
 
     const formSchema = yup.object().shape({
         name: yup.string().required("Name is a required field"),
         size: yup.string().required("A size choice is required"),
         sauce: yup.string().required("A sauce selection is required"),
-        toppings: yup.array().of(yup.string()).required("At least one topping choice is required"),
-        substitute: yup.boolean().oneOf([true])
+        toppings: yup.array(),
+        substitute: yup.boolean(),
+        qty: yup.number().moreThan(0, "You must add at least one pizza")
     });
 
     useEffect(() => {
@@ -60,7 +62,7 @@ const PizzaForm = () => {
 
         const newFormData = {
             ...formState,
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value
         };
 
         validateChange(event);
@@ -77,7 +79,12 @@ const PizzaForm = () => {
                 setPost(res.data);
 
                 setFormState({
-                    name: ""
+                    name: "",
+                    size: "",
+                    sauce: "",
+                    toppings: [],
+                    substitute: false,
+                    qty: 0
                 });
 
                 setServerError(null);
@@ -276,7 +283,7 @@ const PizzaForm = () => {
                         <Row>
                             <Col md={8}>
                                 <FormGroup>
-                                    <Input type='number' name='number' id='number' placeholder='0' bsSize='lg' value={formState.number} onChange={handleChanges} />
+                                    <Input type='number' name='qty' id='qty' placeholder='0' bsSize='lg' value={formState.qty} onChange={handleChanges} />
                                 </FormGroup>
                             </Col>
                             <Col>
