@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 import './Home.css';
 
@@ -8,7 +9,7 @@ const Home = () => {
         <>
             <section className='cta-container'>
                 <h1>Your favorite food delivered while coding</h1>
-                <Button color='primary' size='lg'>Pizza?</Button>
+                <NavLink to='/Pizza'><Button color='primary' size='lg'>Pizza?</Button></NavLink>
             </section>
             <section className='primary-container'>
                 <div className='section-title'>

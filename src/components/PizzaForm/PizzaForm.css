@@ -1,0 +1,27 @@
+.pizza-form-container{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 0 auto;
+    width: 700px;
+}
+
+.pizza-form-container h1{
+    text-align: center;
+}
+
+.pizza-form-container .form-intro{
+    font-size: 1.9rem;
+    padding: 10px;
+    color: black;
+}
+
+.pizza-form-container input, select{
+    padding: 30px;
+}
+
+.pizza-form-container .topping-section{
+    background-color: #adadad;
+    padding: 8px;
+    color: #ffffff;
+}
