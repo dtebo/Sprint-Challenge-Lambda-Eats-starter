@@ -14,3 +14,20 @@
 .cta-container button{
     width: 90px;
 }
+
+.primary-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.primary-container .restaurant{
+    display: block;
+    text-align: left;
+}
+
+.primary-container .section-title{
+    display: inline;
+}
