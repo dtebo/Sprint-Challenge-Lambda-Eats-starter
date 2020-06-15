@@ -78,6 +78,8 @@ const PizzaForm = () => {
             .then(res => {
                 setPost(res.data);
 
+                console.log(res.data);
+
                 setFormState({
                     name: "",
                     size: "",
@@ -126,7 +128,7 @@ const PizzaForm = () => {
                     <FormGroup>
                         <Label for='name'>
                             Name
-                            <Input type='text' id='name' name='name' bsSize='sm' value={formState.name} onChange={handleChanges} />
+                            <Input type='text' data-cy='name' id='name' name='name' bsSize='sm' value={formState.name} onChange={handleChanges} />
                             {errors.name.length > 0 ? <p className='error'>{errors.name}</p> : null}
                         </Label>
                     </FormGroup>
@@ -181,43 +183,43 @@ const PizzaForm = () => {
                             <Col md={6}>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='pepperoni' name='pepperoni'  />{' '}
+                                        <Input type='checkbox' data-cy='pepperoni' id='pepperoni' name='pepperoni'  />{' '}
                                         Pepperoni
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='sausage' name='sausage' />{' '}
+                                        <Input type='checkbox' data-cy='sausage' id='sausage' name='sausage' />{' '}
                                         Sausage
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='canadianbacon' name='canadianbacon' />{' '}
+                                        <Input type='checkbox' data-cy='canadianbacon' id='canadianbacon' name='canadianbacon' />{' '}
                                         Canadian Bacon
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='spicyitaliansausage' name='spicyitaliansausage' />{' '}
+                                        <Input type='checkbox' data-cy='spicyitaliansausage' id='spicyitaliansausage' name='spicyitaliansausage' />{' '}
                                         Spicy Italian Sausage
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='grilledchicken' name='grilledchicken' />{' '}
+                                        <Input type='checkbox' data-cy='grilledchicken' id='grilledchicken' name='grilledchicken' />{' '}
                                         Grilled Chicken
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='onion' name='onion' />{' '}
+                                        <Input type='checkbox' data-cy='onion' id='onion' name='onion' />{' '}
                                         Onion
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='greenpepper' name='greenpepper' />{' '}
+                                        <Input type='checkbox' data-cy='greenpepper' id='greenpepper' name='greenpepper' />{' '}
                                         Green Pepper
                                     </Label>
                                 </FormGroup>
@@ -225,43 +227,43 @@ const PizzaForm = () => {
                             <Col md={6}>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='dicedtomatos' name='dicedtomatos' />{' '}
+                                        <Input type='checkbox' data-cy='dicedtomatos' id='dicedtomatos' name='dicedtomatos' />{' '}
                                         Diced Tomatos
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='blackolives' name='blackolives' />{' '}
+                                        <Input type='checkbox' data-cy='blackolives' id='blackolives' name='blackolives' />{' '}
                                         Black Olives
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='roastedgarlic' name='roastedgarlic' />{' '}
+                                        <Input type='checkbox' data-cy='roastedgarlic' id='roastedgarlic' name='roastedgarlic' />{' '}
                                         Roasted Garlic
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='artichokehearts' name='artichokehearts' />{' '}
+                                        <Input type='checkbox' data-cy='artichokehearts' id='artichokehearts' name='artichokehearts' />{' '}
                                         Artichoke Hearts
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='threecheese' name='threecheese' />{' '}
+                                        <Input type='checkbox' data-cy='threecheese' id='threecheese' name='threecheese' />{' '}
                                         Three Cheese
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='pineapple' name='pineapple' />{' '}
+                                        <Input type='checkbox' data-cy='pineapple' id='pineapple' name='pineapple' />{' '}
                                         Pineapple
                                     </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type='checkbox' id='extracheese' name='extracheese' />{' '}
+                                        <Input type='checkbox' data-cy='extracheese' id='extracheese' name='extracheese' />{' '}
                                         Extra Cheese
                                     </Label>
                                 </FormGroup>
@@ -283,11 +285,11 @@ const PizzaForm = () => {
                         <Row>
                             <Col md={8}>
                                 <FormGroup>
-                                    <Input type='number' name='qty' id='qty' placeholder='0' bsSize='lg' value={formState.qty} onChange={handleChanges} />
+                                    <Input type='number' data-cy='qty' name='qty' id='qty' placeholder='0' bsSize='lg' value={formState.qty} onChange={handleChanges} />
                                 </FormGroup>
                             </Col>
                             <Col>
-                                <Button type='submit' size='lg' disabled={buttonDisabled}>Add to Order    $0.00</Button>
+                                <Button type='submit' data-cy='submit' size='lg' disabled={buttonDisabled}>Add to Order    $0.00</Button>
                             </Col>
                         </Row>
                     </section>
