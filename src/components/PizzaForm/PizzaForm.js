@@ -188,7 +188,7 @@ const PizzaForm = () => {
                     <FormGroup>
                         <Label for='name'>
                             Name
-                            <Input type='text' data-cy='name' id='name' name='name' bsSize='sm' value={formState.name} onChange={handleChanges} />
+                            <Input type='text' data-cy='name' id='name' name='name' bsSize='lg' value={formState.name} onChange={handleChanges} />
                             {errors.name.length > 0 ? <p className='error'>{errors.name}</p> : null}
                         </Label>
                     </FormGroup>
@@ -198,7 +198,7 @@ const PizzaForm = () => {
                     </div>
                     <FormGroup>
                         <Label for='size' />
-                        <Input type='select' data-cy='size' id='size' name='size' value={formState.size} onChange={handleChanges}>
+                        <Input type='select' data-cy='size' id='size' name='size' bsSize='md' value={formState.size} onChange={handleChanges}>
                             <option value=''>Select</option>
                             <option value='small'>Small</option>
                             <option value='medium'>Medium</option>
@@ -336,7 +336,7 @@ const PizzaForm = () => {
                         <p>Choose up to 1</p>
                     </div>
                     <FormGroup>
-                        <CustomInput type='switch' id='substitute' name='substitute' label='Gluten Free Crust (+ $1.00)' bsSize='lg' value={formState.substitute} onChange={handleChanges} />
+                        <CustomInput className='switch' type='switch' id='substitute' name='substitute' label='Gluten Free Crust (+ $1.00)' bsSize='lg' value={formState.substitute} onChange={handleChanges} />
                     </FormGroup>
                     <div className='topping-section'>
                         <h2>Special Instructions</h2>

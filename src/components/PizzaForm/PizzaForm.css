@@ -17,8 +17,9 @@
     color: black;
 }
 
-.pizza-form-container input, select{
-    padding: 30px;
+.pizza-form-container select{
+    margin: 5px;
+    width: 100px;
 }
 
 .pizza-form-container input{
@@ -41,7 +42,7 @@
 }
 
 .form-check{
-    margin-left: 20px;
+    margin: 20px 20px;
 }
 
 .form-check-input{
@@ -50,9 +51,33 @@
 
 .col, .form-group{
     margin-bottom: 2rem;
-    padding: 10px 20px 10px 5px;
+    /* padding: 10px 0px 10px 5px; */
 }
 
-.total-section button, .total-section input[type='number']{
+.form-group{
+    padding-left: 10px;
+}
+.form-group .switch{
+    margin: 20px;
+}
+
+.total-section{
+    border-top: 1px solid gray;
+    margin-top: 20px;
+}
+
+.total-section button{
     margin-top: 10px;
+    width: 90%;
+}
+
+.total-section input[type='number']{
+    width: 40%;
+}
+
+#special-instructions{
+    margin-top: 10px;
+    position: relative;
+    left: 10%;
+    width: 80%;
 }
