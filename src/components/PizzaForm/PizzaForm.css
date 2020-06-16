@@ -1,0 +1,83 @@
+.pizza-form-container{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 0 auto;
+    width: 700px;
+    font-size: 1.3rem;
+}
+
+.pizza-form-container h1{
+    text-align: center;
+}
+
+.pizza-form-container .form-intro{
+    font-size: 1.9rem;
+    padding: 10px;
+    color: black;
+}
+
+.pizza-form-container select{
+    margin: 5px;
+    width: 100px;
+}
+
+.pizza-form-container input{
+    height: 30px !important;
+}
+
+.pizza-form-container .topping-section{
+    background-color: #adadad;
+    padding: 8px;
+    color: #ffffff;
+}
+
+.total-section button, .total-section input[type='number']{
+    margin-top: 10px;
+}
+
+.total-section .row{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.form-check{
+    margin: 20px 20px;
+}
+
+.form-check-input{
+    margin-left: -1.8rem;
+}
+
+.col, .form-group{
+    margin-bottom: 2rem;
+    /* padding: 10px 0px 10px 5px; */
+}
+
+.form-group{
+    padding-left: 10px;
+}
+.form-group .switch{
+    margin: 20px;
+}
+
+.total-section{
+    border-top: 1px solid gray;
+    margin-top: 20px;
+}
+
+.total-section button{
+    margin-top: 10px;
+    width: 90%;
+}
+
+.total-section input[type='number']{
+    width: 40%;
+}
+
+#special-instructions{
+    margin-top: 10px;
+    position: relative;
+    left: 10%;
+    width: 80%;
+}

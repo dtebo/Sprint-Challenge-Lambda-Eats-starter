@@ -1,0 +1,53 @@
+.cta-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15%;
+}
+
+.cta-container h1{
+    padding: 5%;
+}
+
+.cta-container button{
+    width: 90px;
+}
+
+.primary-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin: 0 auto;
+    width: 800px;
+}
+
+.primary-container .restaurant{
+    display: block;
+    text-align: left;
+    width: 240px;
+}
+
+.primary-container .restaurant-row{
+    display: flex;
+    justify-self: space-around;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.primary-container .section-title{
+    display: inline;
+}
+
+.delivery-info-row{
+    display: flex;
+    justify-content: start;
+}
+
+.delivery-info-row .info{
+    padding: 5px;
+    border: 1px solid black;
+    margin-right: 10px;
+}
